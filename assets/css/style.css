@@ -1,0 +1,175 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: 0px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-area {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .main-area {
+    padding-bottom: 100px;
+  }
+}
+.main-area .mobile-icon-area {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .main-area .mobile-icon-area {
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+}
+.main-area .mobile-icon-area img {
+  width: 70%;
+  height: auto;
+}
+.main-area .logo-area-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .main-area .logo-area-mobile {
+    display: block;
+    padding-top: 100px;
+  }
+}
+.main-area .right-content-area {
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .main-area .right-content-area {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.main-area .right-content-area .logo-area {
+  margin-bottom: 40px;
+  display: none;
+}
+@media (min-width: 768px) {
+  .main-area .right-content-area .logo-area {
+    display: block;
+  }
+}
+.main-area .right-content-area .logo-area img {
+  width: 174px;
+  height: auto;
+}
+.main-area .right-content-area p {
+  color: #000;
+  font-weight: 400;
+  font-size: 25.48px;
+  line-height: 35.58px;
+  letter-spacing: 0%;
+  text-align: justify;
+}
+.main-area .right-content-area .app-icon-area {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.main-area .right-content-area .app-icon-area img {
+  width: 200px;
+  height: auto;
+}
+.main-area .custom-card {
+  margin-top: 30px;
+  padding: 10px 50px;
+  border: 5px solid;
+  border-image-source: linear-gradient(121.14deg, #947922 0%, #FEF9CF 36.9%, #947922 97.12%);
+  background: rgba(255, 255, 255, 0.9490196078);
+}
+.main-area .custom-card .right-content-area {
+  padding-top: 0px;
+}
+.main-area .custom-card .right-content-area p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.page-logo-area img {
+  width: 100px;
+  height: auto;
+}
+
+.page-title {
+  background-color: #F7F7F7;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.page-title h3 {
+  margin-bottom: 0px;
+}
+.page-title .breadcrumb {
+  justify-content: center;
+}
+.page-title .breadcrumb a {
+  color: #947922;
+}
+
+.footer-area {
+  background-color: #000000;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+.footer-area .copyright-area img {
+  width: 56px;
+  height: 48px;
+}
+.footer-area .ft-right-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+.footer-area .ft-right-area ul.ft-menu {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.footer-area .ft-right-area ul.ft-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 50px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.footer-area .ft-right-area ul.ft-menu li a:hover {
+  color: #947922;
+}
+.footer-area .ft-right-area p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 50px;
+  letter-spacing: 0%;
+  text-align: right;
+  margin-bottom: 0px;
+}/*# sourceMappingURL=style.css.map */
