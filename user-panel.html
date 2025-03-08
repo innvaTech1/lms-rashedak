@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Panel - LifeBalance LMS</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/user-panel-styles.css">
+</head>
+
+<body>
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-brightness-high text-gold me-2"></i>Rasheda Khanom
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+        </ul>
+        <div class="ms-lg-4 mt-3 mt-lg-0 d-flex align-items-center">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+              id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="User" width="32" height="32" class="rounded-circle me-2">
+              <strong>John Doe</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item active" href="user-panel.html">Dashboard</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <div class="user-profile text-center mb-4">
+            <img src="https://github.com/mdo.png" alt="User" class="rounded-circle user-avatar">
+            <h5 class="mt-3 mb-0">John Doe</h5>
+            <p class="text-muted small">Student</p>
+            <div class="progress progress-sm">
+              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+            <p class="small mt-1">75% Profile Complete</p>
+          </div>
+
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#dashboard-section" data-section="dashboard-section">
+                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-courses-section" data-section="my-courses-section">
+                <i class="bi bi-book me-2"></i> My Courses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#live-classes-section" data-section="live-classes-section">
+                <i class="bi bi-camera-video me-2"></i> Live Classes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#invoices-section" data-section="invoices-section">
+                <i class="bi bi-receipt me-2"></i> Invoices
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certificates-section" data-section="certificates-section">
+                <i class="bi bi-award me-2"></i> Certificates
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#messages-section" data-section="messages-section">
+                <i class="bi bi-chat-dots me-2"></i> Messages
+                <span class="badge bg-danger rounded-pill ms-auto">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#settings-section" data-section="settings-section">
+                <i class="bi bi-gear me-2"></i> Settings
+              </a>
+            </li>
+          </ul>
+
+          <hr class="my-3">
+
+          <div class="sidebar-heading px-3 mt-4 mb-1 text-muted">
+            <span>Support</span>
+          </div>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-question-circle me-2"></i> Help Center
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-headset me-2"></i> Contact Support
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="content-section active">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-calendar3"></i> Today
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <i class="bi bi-download"></i> Export
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Welcome Banner -->
+          <div class="welcome-banner mb-4">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="welcome-content">
+                  <h2>Welcome back, John!</h2>
+                  <p>You have 3 courses in progress and 2 upcoming live classes this week.</p>
+                  <button class="btn btn-primary">Resume Learning</button>
+                </div>
+              </div>
+              <div class="col-md-4 d-none d-md-block">
+                <div class="welcome-image"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-primary">
+                      <i class="bi bi-book"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Courses Enrolled</h5>
+                      <p class="card-text display-6">5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-success">
+                      <i class="bi bi-check-circle"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Completed</h5>
+                      <p class="card-text display-6">2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-warning">
+                      <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Hours Spent</h5>
+                      <p class="card-text display-6">42</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-info">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Certificates</h5>
+                      <p class="card-text display-6">2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- In Progress & Upcoming Classes -->
+          <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center">
+                  <h5 class="mb-0">In Progress Courses</h5>
+                  <a href="#my-courses-section" class="btn btn-sm btn-link" data-section="my-courses-section">View
+                    All</a>
+                </div>
+                <div class="card-body">
+                  <div class="course-progress-item">
+                    <div class="d-flex align-items-center mb-2">
+                      <img src="https://placehold.co/80x80" alt="Course" class="rounded me-3">
+                      <div>
+                        <h6 class="mb-1">Professional Development Masterclass</h6>
+                        <p class="text-muted mb-0 small">Instructor: Dr. Sarah Johnson</p>
+                      </div>
+                      <div class="ms-auto text-end">
+                        <span class="badge bg-primary">In Progress</span>
+                        <p class="text-muted mb-0 small">80% Complete</p>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm mb-3">
+                      <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="small text-muted">
+                        <i class="bi bi-calendar3 me-1"></i> Ends on: May 30, 2023
+                      </div>
+                      <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="course-progress-item">
+                    <div class="d-flex align-items-center mb-2">
+                      <img src="https://placehold.co/80x80" alt="Course" class="rounded me-3">
+                      <div>
+                        <h6 class="mb-1">Mindfulness for Everyday Life</h6>
+                        <p class="text-muted mb-0 small">Instructor: Michael Chen</p>
+                      </div>
+                      <div class="ms-auto text-end">
+                        <span class="badge bg-primary">In Progress</span>
+                        <p class="text-muted mb-0 small">45% Complete</p>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm mb-3">
+                      <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="small text-muted">
+                        <i class="bi bi-calendar3 me-1"></i> Ends on: June 15, 2023
+                      </div>
+                      <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="course-progress-item">
+                    <div class="d-flex align-items-center mb-2">
+                      <img src="https://placehold.co/80x80" alt="Course" class="rounded me-3">
+                      <div>
+                        <h6 class="mb-1">Effective Time Management</h6>
+                        <p class="text-muted mb-0 small">Instructor: Emily Rodriguez</p>
+                      </div>
+                      <div class="ms-auto text-end">
+                        <span class="badge bg-primary">In Progress</span>
+                        <p class="text-muted mb-0 small">25% Complete</p>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm mb-3">
+                      <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="small text-muted">
+                        <i class="bi bi-calendar3 me-1"></i> Ends on: July 10, 2023
+                      </div>
+                      <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center">
+                  <h5 class="mb-0">Upcoming Live Classes</h5>
+                  <a href="#live-classes-section" class="btn btn-sm btn-link" data-section="live-classes-section">View
+                    All</a>
+                </div>
+                <div class="card-body">
+                  <div class="upcoming-class">
+                    <div class="d-flex align-items-center">
+                      <div class="class-date text-center me-3">
+                        <div class="date-day">15</div>
+                        <div class="date-month">May</div>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Stress Management Techniques</h6>
+                        <p class="text-muted mb-0 small">2:00 PM - 3:30 PM</p>
+                        <p class="text-muted mb-0 small">Dr. Sarah Johnson</p>
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <a href="#" class="btn btn-sm btn-success w-100" data-bs-toggle="modal"
+                        data-bs-target="#zoomModal">
+                        <i class="bi bi-camera-video me-1"></i> Join Zoom Meeting
+                      </a>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="upcoming-class">
+                    <div class="d-flex align-items-center">
+                      <div class="class-date text-center me-3">
+                        <div class="date-day">18</div>
+                        <div class="date-month">May</div>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Productivity Workshop</h6>
+                        <p class="text-muted mb-0 small">10:00 AM - 12:00 PM</p>
+                        <p class="text-muted mb-0 small">Emily Rodriguez</p>
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <a href="#" class="btn btn-sm btn-outline-secondary w-100">
+                        <i class="bi bi-calendar-plus me-1"></i> Add to Calendar
+                      </a>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="upcoming-class">
+                    <div class="d-flex align-items-center">
+                      <div class="class-date text-center me-3">
+                        <div class="date-day">22</div>
+                        <div class="date-month">May</div>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Q&A Session: Career Growth</h6>
+                        <p class="text-muted mb-0 small">3:00 PM - 4:00 PM</p>
+                        <p class="text-muted mb-0 small">Michael Chen</p>
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <a href="#" class="btn btn-sm btn-outline-secondary w-100">
+                        <i class="bi bi-calendar-plus me-1"></i> Add to Calendar
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="card border-0 shadow-sm dashboard-card mb-4">
+            <div class="card-header bg-transparent border-0">
+              <h5 class="mb-0">Recent Activity</h5>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-icon bg-primary">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h6 class="mb-1">Completed Module 5: Advanced Techniques</h6>
+                    <p class="text-muted mb-0 small">Professional Development Masterclass</p>
+                    <p class="text-muted mb-0 small"><i class="bi bi-clock me-1"></i> 2 hours ago</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon bg-info">
+                    <i class="bi bi-play-circle"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h6 class="mb-1">Started Module 3: Daily Practices</h6>
+                    <p class="text-muted mb-0 small">Mindfulness for Everyday Life</p>
+                    <p class="text-muted mb-0 small"><i class="bi bi-clock me-1"></i> Yesterday</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon bg-success">
+                    <i class="bi bi-trophy"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h6 class="mb-1">Earned Certificate</h6>
+                    <p class="text-muted mb-0 small">Stress Management Fundamentals</p>
+                    <p class="text-muted mb-0 small"><i class="bi bi-clock me-1"></i> 3 days ago</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon bg-warning">
+                    <i class="bi bi-calendar-check"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h6 class="mb-1">Enrolled in New Course</h6>
+                    <p class="text-muted mb-0 small">Effective Time Management</p>
+                    <p class="text-muted mb-0 small"><i class="bi bi-clock me-1"></i> 1 week ago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- My Courses Section -->
+        <section id="my-courses-section" class="content-section">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">My Courses</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="input-group">
+                <input type="text" class="form-control form-control-sm" placeholder="Search courses..."
+                  id="courseSearch">
+                <button class="btn btn-sm btn-outline-secondary" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Filters -->
+          <div class="card border-0 shadow-sm dashboard-card mb-4">
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="statusFilter" class="form-label small">Status</label>
+                  <select class="form-select form-select-sm" id="statusFilter">
+                    <option value="all">All Courses</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="not-started">Not Started</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="categoryFilter" class="form-label small">Category</label>
+                  <select class="form-select form-select-sm" id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="professional">Professional Development</option>
+                    <option value="personal">Personal Growth</option>
+                    <option value="wellness">Wellness</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="sortFilter" class="form-label small">Sort By</label>
+                  <select class="form-select form-select-sm" id="sortFilter">
+                    <option value="recent">Recently Accessed</option>
+                    <option value="progress">Progress</option>
+                    <option value="name">Name</option>
+                    <option value="date">Start Date</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course List -->
+          <div class="row g-4 mb-4" id="courseList">
+            <!-- Course 1 -->
+            <div class="col-md-6 col-lg-4" data-status="in-progress" data-category="professional">
+              <div class="card h-100 border-0 shadow-sm course-card">
+                <div class="course-image">
+                  <img src="https://placehold.co/400x200" class="card-img-top" alt="Course">
+                  <div class="course-progress-indicator">
+                    <div class="progress-ring">
+                      <svg width="60" height="60">
+                        <circle class="progress-ring-circle-bg" stroke-width="5" fill="transparent" r="25" cx="30"
+                          cy="30" />
+                        <circle class="progress-ring-circle" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"
+                          stroke-dasharray="157" stroke-dashoffset="31.4" />
+                      </svg>
+                      <span class="progress-text">80%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-primary mb-2">In Progress</span>
+                  <h5 class="card-title">Professional Development Masterclass</h5>
+                  <p class="card-text small">Learn essential skills for career advancement and professional growth.</p>
+                  <div class="course-details">
+                    <div class="course-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-calendar3"></i>
+                      <span>Jan 15 - May 30, 2023</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>20 hours total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary">Continue Learning</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#courseDetailsModal">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-md-6 col-lg-4" data-status="in-progress" data-category="wellness">
+              <div class="card h-100 border-0 shadow-sm course-card">
+                <div class="course-image">
+                  <img src="https://placehold.co/400x200" class="card-img-top" alt="Course">
+                  <div class="course-progress-indicator">
+                    <div class="progress-ring">
+                      <svg width="60" height="60">
+                        <circle class="progress-ring-circle-bg" stroke-width="5" fill="transparent" r="25" cx="30"
+                          cy="30" />
+                        <circle class="progress-ring-circle" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"
+                          stroke-dasharray="157" stroke-dashoffset="86.35" />
+                      </svg>
+                      <span class="progress-text">45%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-primary mb-2">In Progress</span>
+                  <h5 class="card-title">Mindfulness for Everyday Life</h5>
+                  <p class="card-text small">Practical techniques to incorporate mindfulness into your daily routine.
+                  </p>
+                  <div class="course-details">
+                    <div class="course-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Michael Chen</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-calendar3"></i>
+                      <span>Feb 10 - Jun 15, 2023</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>15 hours total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary">Continue Learning</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#courseDetailsModal">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-md-6 col-lg-4" data-status="in-progress" data-category="personal">
+              <div class="card h-100 border-0 shadow-sm course-card">
+                <div class="course-image">
+                  <img src="https://placehold.co/400x200" class="card-img-top" alt="Course">
+                  <div class="course-progress-indicator">
+                    <div class="progress-ring">
+                      <svg width="60" height="60">
+                        <circle class="progress-ring-circle-bg" stroke-width="5" fill="transparent" r="25" cx="30"
+                          cy="30" />
+                        <circle class="progress-ring-circle" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"
+                          stroke-dasharray="157" stroke-dashoffset="117.75" />
+                      </svg>
+                      <span class="progress-text">25%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-primary mb-2">In Progress</span>
+                  <h5 class="card-title">Effective Time Management</h5>
+                  <p class="card-text small">Master strategies to optimize your time and boost productivity.</p>
+                  <div class="course-details">
+                    <div class="course-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Emily Rodriguez</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-calendar3"></i>
+                      <span>Mar 5 - Jul 10, 2023</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>12 hours total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary">Continue Learning</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#courseDetailsModal">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="col-md-6 col-lg-4" data-status="completed" data-category="wellness">
+              <div class="card h-100 border-0 shadow-sm course-card">
+                <div class="course-image">
+                  <img src="https://placehold.co/400x200" class="card-img-top" alt="Course">
+                  <div class="course-progress-indicator">
+                    <div class="progress-ring completed">
+                      <svg width="60" height="60">
+                        <circle class="progress-ring-circle-bg" stroke-width="5" fill="transparent" r="25" cx="30"
+                          cy="30" />
+                        <circle class="progress-ring-circle" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"
+                          stroke-dasharray="157" stroke-dashoffset="0" />
+                      </svg>
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-success mb-2">Completed</span>
+                  <h5 class="card-title">Stress Management Fundamentals</h5>
+                  <p class="card-text small">Learn techniques to manage stress and improve mental wellbeing.</p>
+                  <div class="course-details">
+                    <div class="course-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-calendar3"></i>
+                      <span>Nov 10, 2022 - Feb 15, 2023</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>10 hours total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-secondary">Review Course</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#courseDetailsModal">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 5 -->
+            <div class="col-md-6 col-lg-4" data-status="completed" data-category="professional">
+              <div class="card h-100 border-0 shadow-sm course-card">
+                <div class="course-image">
+                  <img src="https://placehold.co/400x200" class="card-img-top" alt="Course">
+                  <div class="course-progress-indicator">
+                    <div class="progress-ring completed">
+                      <svg width="60" height="60">
+                        <circle class="progress-ring-circle-bg" stroke-width="5" fill="transparent" r="25" cx="30"
+                          cy="30" />
+                        <circle class="progress-ring-circle" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"
+                          stroke-dasharray="157" stroke-dashoffset="0" />
+                      </svg>
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="badge bg-success mb-2">Completed</span>
+                  <h5 class="card-title">Business Communication Skills</h5>
+                  <p class="card-text small">Master effective communication techniques for professional settings.</p>
+                  <div class="course-details">
+                    <div class="course-detail">
+                      <i class="bi bi-person"></i>
+                      <span>James Wilson</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-calendar3"></i>
+                      <span>Oct 5, 2022 - Jan 20, 2023</span>
+                    </div>
+                    <div class="course-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>15 hours total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-secondary">Review Course</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#courseDetailsModal">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live Classes Section -->
+        <section id="live-classes-section" class="content-section">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Live Classes</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary active">Upcoming</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Past</button>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-calendar3"></i> Calendar View
+              </button>
+            </div>
+          </div>
+
+          <!-- Calendar View -->
+          <div class="card border-0 shadow-sm dashboard-card mb-4">
+            <div class="card-body p-0">
+              <div class="calendar-header d-flex justify-content-between align-items-center p-3 border-bottom">
+                <button class="btn btn-sm btn-link"><i class="bi bi-chevron-left"></i></button>
+                <h5 class="mb-0">May 2023</h5>
+                <button class="btn btn-sm btn-link"><i class="bi bi-chevron-right"></i></button>
+              </div>
+              <div class="calendar-body p-3">
+                <!-- Calendar will be rendered by JS -->
+                <div id="calendar" class="simple-calendar"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Live Classes -->
+          <h3 class="h4 mb-3">Upcoming Classes</h3>
+          <div class="row g-4 mb-4">
+            <!-- Class 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm live-class-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="class-date text-center">
+                      <div class="date-day">15</div>
+                      <div class="date-month">May</div>
+                    </div>
+                    <span class="badge bg-primary">Today</span>
+                  </div>
+                  <h5 class="card-title">Stress Management Techniques</h5>
+                  <div class="class-details mb-3">
+                    <div class="class-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>2:00 PM - 3:30 PM</span>
+                    </div>
+                    <div class="class-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="class-detail">
+                      <i class="bi bi-book"></i>
+                      <span>Professional Development Masterclass</span>
+                    </div>
+                  </div>
+                  <p class="card-text small">Learn practical techniques to manage stress in professional environments.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#zoomModal">
+                      <i class="bi bi-camera-video me-1"></i> Join Zoom Meeting
+                    </a>
+                    <button class="btn btn-outline-secondary">
+                      <i class="bi bi-calendar-plus me-1"></i> Add to Calendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Class 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm live-class-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="class-date text-center">
+                      <div class="date-day">18</div>
+                      <div class="date-month">May</div>
+                    </div>
+                    <span class="badge bg-info">Upcoming</span>
+                  </div>
+                  <h5 class="card-title">Productivity Workshop</h5>
+                  <div class="class-details mb-3">
+                    <div class="class-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>10:00 AM - 12:00 PM</span>
+                    </div>
+                    <div class="class-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Emily Rodriguez</span>
+                    </div>
+                    <div class="class-detail">
+                      <i class="bi bi-book"></i>
+                      <span>Effective Time Management</span>
+                    </div>
+                  </div>
+                  <p class="card-text small">Interactive workshop on boosting productivity and managing time
+                    effectively.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-success" disabled>
+                      <i class="bi bi-camera-video me-1"></i> Join Zoom Meeting
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                      <i class="bi bi-calendar-plus me-1"></i> Add to Calendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Class 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm live-class-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="class-date text-center">
+                      <div class="date-day">22</div>
+                      <div class="date-month">May</div>
+                    </div>
+                    <span class="badge bg-info">Upcoming</span>
+                  </div>
+                  <h5 class="card-title">Q&A Session: Career Growth</h5>
+                  <div class="class-details mb-3">
+                    <div class="class-detail">
+                      <i class="bi bi-clock"></i>
+                      <span>3:00 PM - 4:00 PM</span>
+                    </div>
+                    <div class="class-detail">
+                      <i class="bi bi-person"></i>
+                      <span>Michael Chen</span>
+                    </div>
+                    <div class="class-detail">
+                      <i class="bi bi-book"></i>
+                      <span>Professional Development Masterclass</span>
+                    </div>
+                  </div>
+                  <p class="card-text small">Interactive Q&A session addressing career growth and professional
+                    development.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-success" disabled>
+                      <i class="bi bi-camera-video me-1"></i> Join Zoom Meeting
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                      <i class="bi bi-calendar-plus me-1"></i> Add to Calendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Past Live Classes -->
+          <h3 class="h4 mb-3">Past Classes</h3>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Date</th>
+                  <th>Class</th>
+                  <th>Instructor</th>
+                  <th>Duration</th>
+                  <th>Course</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>May 8, 2023</td>
+                  <td>Mindfulness Meditation Practice</td>
+                  <td>Michael Chen</td>
+                  <td>1 hour</td>
+                  <td>Mindfulness for Everyday Life</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-play-circle me-1"></i> Recording
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>May 1, 2023</td>
+                  <td>Time Blocking Techniques</td>
+                  <td>Emily Rodriguez</td>
+                  <td>1.5 hours</td>
+                  <td>Effective Time Management</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-play-circle me-1"></i> Recording
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Apr 24, 2023</td>
+                  <td>Networking Strategies</td>
+                  <td>Dr. Sarah Johnson</td>
+                  <td>2 hours</td>
+                  <td>Professional Development Masterclass</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-play-circle me-1"></i> Recording
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Invoices Section -->
+        <section id="invoices-section" class="content-section">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Invoices & Payments</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-download"></i> Download All
+              </button>
+            </div>
+          </div>
+
+          <!-- Payment Summary -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-success">
+                      <i class="bi bi-credit-card"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Total Spent</h5>
+                      <p class="card-text display-6">$1,245</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-primary">
+                      <i class="bi bi-receipt"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Invoices</h5>
+                      <p class="card-text display-6">5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-soft-info">
+                      <i class="bi bi-wallet2"></i>
+                    </div>
+                    <div class="ms-3">
+                      <h5 class="card-title">Payment Method</h5>
+                      <p class="card-text">Visa •••• 4242</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invoices Table -->
+          <div class="card border-0 shadow-sm dashboard-card mb-4">
+            <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">Payment History</h5>
+              <div class="input-group input-group-sm" style="width: 200px;">
+                <input type="text" class="form-control" placeholder="Search invoices...">
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover invoice-table mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Invoice #</th>
+                      <th>Date</th>
+                      <th>Course</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>INV-2023-001</td>
+                      <td>May 5, 2023</td>
+                      <td>Effective Time Management</td>
+                      <td>$299</td>
+                      <td><span class="badge bg-success">Paid</span></td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-download"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>INV-2023-002</td>
+                      <td>Feb 10, 2023</td>
+                      <td>Mindfulness for Everyday Life</td>
+                      <td>$249</td>
+                      <td><span class="badge bg-success">Paid</span></td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-download"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>INV-2023-003</td>
+                      <td>Jan 15, 2023</td>
+                      <td>Professional Development Masterclass</td>
+                      <td>$399</td>
+                      <td><span class="badge bg-success">Paid</span></td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-download"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>INV-2022-004</td>
+                      <td>Nov 10, 2022</td>
+                      <td>Stress Management Fundamentals</td>
+                      <td>$199</td>
+                      <td><span class="badge bg-success">Paid</span></td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-download"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>INV-2022-005</td>
+                      <td>Oct 5, 2022</td>
+                      <td>Business Communication Skills</td>
+                      <td>$299</td>
+                      <td><span class="badge bg-success">Paid</span></td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-download"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center">
+              <nav aria-label="Invoice pagination">
+                <ul class="pagination justify-content-center mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Payment Methods -->
+          <h3 class="h4 mb-3">Payment Methods</h3>
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0">Credit Cards</h5>
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-plus"></i> Add New
+                    </button>
+                  </div>
+                  <div class="payment-method-item">
+                    <div class="d-flex align-items-center">
+                      <div class="payment-icon me-3">
+                        <i class="bi bi-credit-card"></i>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Visa ending in 4242</h6>
+                        <p class="text-muted mb-0 small">Expires 05/2025</p>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-success">Default</span>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="payment-method-item">
+                    <div class="d-flex align-items-center">
+                      <div class="payment-icon me-3">
+                        <i class="bi bi-credit-card"></i>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Mastercard ending in 5555</h6>
+                        <p class="text-muted mb-0 small">Expires 08/2024</p>
+                      </div>
+                      <div class="ms-auto">
+                        <button class="btn btn-sm btn-link text-muted">Set Default</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0">Billing Address</h5>
+                    <button class="btn btn-sm btn-outline-secondary">
+                      <i class="bi bi-pencil"></i> Edit
+                    </button>
+                  </div>
+                  <address>
+                    <strong>John Doe</strong><br>
+                    1234 Main St<br>
+                    Apt 4B<br>
+                    San Francisco, CA 94103<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                  </address>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates-section" class="content-section">
+          <!-- Certificate content here -->
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Certificates</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-download"></i> Download All
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm certificate-card">
+                <div class="card-body">
+                  <div class="certificate-preview">
+                    <img src="https://placehold.co/600x400" alt="Certificate" class="img-fluid">
+                    <div class="certificate-overlay">
+                      <button class="btn btn-light">
+                        <i class="bi bi-eye"></i> View
+                      </button>
+                      <button class="btn btn-light">
+                        <i class="bi bi-download"></i> Download
+                      </button>
+                    </div>
+                  </div>
+                  <div class="certificate-details mt-3">
+                    <h5>Stress Management Fundamentals</h5>
+                    <p class="text-muted mb-2">Issued on: February 15, 2023</p>
+                    <p class="text-muted mb-0">Credential ID: CERT-SM-2023-001</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm certificate-card">
+                <div class="card-body">
+                  <div class="certificate-preview">
+                    <img src="https://placehold.co/600x400" alt="Certificate" class="img-fluid">
+                    <div class="certificate-overlay">
+                      <button class="btn btn-light">
+                        <i class="bi bi-eye"></i> View
+                      </button>
+                      <button class="btn btn-light">
+                        <i class="bi bi-download"></i> Download
+                      </button>
+                    </div>
+                  </div>
+                  <div class="certificate-details mt-3">
+                    <h5>Business Communication Skills</h5>
+                    <p class="text-muted mb-2">Issued on: January 20, 2023</p>
+                    <p class="text-muted mb-0">Credential ID: CERT-BC-2023-002</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section id="messages-section" class="content-section">
+          <!-- Messages content here -->
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Messages</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-envelope-plus"></i> Compose
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-header bg-transparent border-0">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search messages...">
+                    <button class="btn btn-outline-secondary" type="button">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="list-group list-group-flush message-list">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                      <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="https://github.com/mdo.png" alt="User" class="rounded-circle message-avatar">
+                          <div class="ms-3">
+                            <h6 class="mb-0">Dr. Sarah Johnson</h6>
+                            <p class="mb-0 small text-truncate">About your upcoming assignment...</p>
+                          </div>
+                        </div>
+                        <div class="text-end">
+                          <small class="text-muted">10:30 AM</small>
+                          <span class="badge bg-danger rounded-pill">1</span>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="https://github.com/mdo.png" alt="User" class="rounded-circle message-avatar">
+                          <div class="ms-3">
+                            <h6 class="mb-0">Michael Chen</h6>
+                            <p class="mb-0 small text-truncate">Mindfulness session feedback</p>
+                          </div>
+                        </div>
+                        <div class="text-end">
+                          <small class="text-muted">Yesterday</small>
+                          <span class="badge bg-danger rounded-pill">2</span>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="https://github.com/mdo.png" alt="User" class="rounded-circle message-avatar">
+                          <div class="ms-3">
+                            <h6 class="mb-0">Emily Rodriguez</h6>
+                            <p class="mb-0 small text-truncate">Time management course update</p>
+                          </div>
+                        </div>
+                        <div class="text-end">
+                          <small class="text-muted">May 10</small>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="https://github.com/mdo.png" alt="User" class="rounded-circle message-avatar">
+                          <div class="ms-3">
+                            <h6 class="mb-0">Support Team</h6>
+                            <p class="mb-0 small text-truncate">Your ticket has been resolved</p>
+                          </div>
+                        </div>
+                        <div class="text-end">
+                          <small class="text-muted">May 5</small>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <img src="https://github.com/mdo.png" alt="User" class="rounded-circle message-avatar">
+                    <div class="ms-3">
+                      <h5 class="mb-0">Dr. Sarah Johnson</h5>
+                      <p class="text-muted mb-0 small">Professional Development Masterclass</p>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="btn btn-sm btn-outline-secondary">
+                      <i class="bi bi-telephone"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary ms-1">
+                      <i class="bi bi-camera-video"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary ms-1">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body message-body">
+                  <div class="message-date-divider">
+                    <span>Today</span>
+                  </div>
+                  <div class="message received">
+                    <div class="message-content">
+                      <p>Hi John, I wanted to check in about your upcoming assignment for the Professional Development
+                        course.</p>
+                    </div>
+                    <div class="message-time">10:15 AM</div>
+                  </div>
+                  <div class="message received">
+                    <div class="message-content">
+                      <p>Do you have any questions or need any clarification before the deadline?</p>
+                    </div>
+                    <div class="message-time">10:16 AM</div>
+                  </div>
+                  <div class="message sent">
+                    <div class="message-content">
+                      <p>Hi Dr. Johnson, thanks for checking in!</p>
+                    </div>
+                    <div class="message-time">10:20 AM</div>
+                  </div>
+                  <div class="message sent">
+                    <div class="message-content">
+                      <p>I'm working on the final part now. I did have a question about the case study section - should
+                        we include our own examples or stick to the ones provided in the course?</p>
+                    </div>
+                    <div class="message-time">10:22 AM</div>
+                  </div>
+                  <div class="message received">
+                    <div class="message-content">
+                      <p>Great question! I encourage you to include your own examples if you have relevant ones from
+                        your experience. It makes the assignment more personalized and shows deeper understanding.</p>
+                    </div>
+                    <div class="message-time">10:30 AM</div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent">
+                  <form class="message-form">
+                    <div class="input-group">
+                      <button class="btn btn-outline-secondary" type="button">
+                        <i class="bi bi-paperclip"></i>
+                      </button>
+                      <input type="text" class="form-control" placeholder="Type a message...">
+                      <button class="btn btn-primary" type="submit">
+                        <i class="bi bi-send"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings-section" class="content-section">
+          <!-- Settings content here -->
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Settings</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-sm btn-primary">
+                <i class="bi bi-save"></i> Save Changes
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-md-3">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body p-0">
+                  <div class="list-group list-group-flush settings-nav">
+                    <a href="#profile-tab" class="list-group-item list-group-item-action active" data-bs-toggle="tab">
+                      <i class="bi bi-person me-2"></i> Profile
+                    </a>
+                    <a href="#account-tab" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                      <i class="bi bi-shield-lock me-2"></i> Account
+                    </a>
+                    <a href="#notifications-tab" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                      <i class="bi bi-bell me-2"></i> Notifications
+                    </a>
+                    <a href="#privacy-tab" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                      <i class="bi bi-eye me-2"></i> Privacy
+                    </a>
+                    <a href="#billing-tab" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                      <i class="bi bi-credit-card me-2"></i> Billing
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card border-0 shadow-sm dashboard-card">
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="profile-tab">
+                      <h4 class="mb-4">Profile Settings</h4>
+                      <form>
+                        <div class="mb-4 text-center">
+                          <img src="https://github.com/mdo.png" alt="User" class="rounded-circle profile-avatar">
+                          <div class="mt-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                              <i class="bi bi-upload"></i> Change Photo
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                          <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" value="John">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" value="Doe">
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" value="john.doe@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="phone" class="form-label">Phone</label>
+                          <input type="tel" class="form-control" id="phone" value="(123) 456-7890">
+                        </div>
+                        <div class="mb-3">
+                          <label for="bio" class="form-label">Bio</label>
+                          <textarea class="form-control" id="bio"
+                            rows="3">Professional seeking to improve skills and advance career through continuous learning.</textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="account-tab">
+                      <h4 class="mb-4">Account Settings</h4>
+                      <!-- Account settings content -->
+                    </div>
+                    <div class="tab-pane fade" id="notifications-tab">
+                      <h4 class="mb-4">Notification Settings</h4>
+                      <!-- Notification settings content -->
+                    </div>
+                    <div class="tab-pane fade" id="privacy-tab">
+                      <h4 class="mb-4">Privacy Settings</h4>
+                      <!-- Privacy settings content -->
+                    </div>
+                    <div class="tab-pane fade" id="billing-tab">
+                      <h4 class="mb-4">Billing Settings</h4>
+                      <!-- Billing settings content -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+      <span class="text-muted">&copy; 2023 LifeBalance LMS. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Zoom Meeting Modal -->
+  <div class="modal fade" id="zoomModal" tabindex="-1" aria-labelledby="zoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="zoomModalLabel">Join Zoom Meeting</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="zoom-info mb-4">
+            <h6>Stress Management Techniques</h6>
+            <p class="text-muted mb-3">May 15, 2023 • 2:00 PM - 3:30 PM</p>
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-link-45deg me-2"></i>
+              <span>https://zoom.us/j/1234567890</span>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-hash me-2"></i>
+              <span>Meeting ID: 123 456 7890</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-shield-lock me-2"></i>
+              <span>Passcode: 123456</span>
+            </div>
+          </div>
+          <div class="d-grid gap-2">
+            <a href="https://zoom.us/j/1234567890" target="_blank" class="btn btn-success">
+              <i class="bi bi-camera-video me-2"></i> Join Meeting Now
+            </a>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              <i class="bi bi-calendar-plus me-2"></i> Add to Calendar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Details Modal -->
+  <div class="modal fade" id="courseDetailsModal" tabindex="-1" aria-labelledby="courseDetailsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseDetailsModalLabel">Course Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Course details content will be loaded dynamically -->
+          <div class="course-detail-content">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="https://placehold.co/400x300" alt="Course" class="img-fluid rounded mb-3">
+                <div class="progress mb-2">
+                  <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0"
+                    aria-valuemax="100">80%</div>
+                </div>
+                <p class="text-center">80% Complete</p>
+              </div>
+              <div class="col-md-8">
+                <h4>Professional Development Masterclass</h4>
+                <p class="text-muted">Learn essential skills for career advancement and professional growth.</p>
+                <div class="course-meta mb-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-person me-2"></i>
+                    <span>Instructor: Dr. Sarah Johnson</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-calendar3 me-2"></i>
+                    <span>Duration: Jan 15 - May 30, 2023</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-clock me-2"></i>
+                    <span>Total Hours: 20 hours</span>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-award me-2"></i>
+                    <span>Certificate: Yes, upon completion</span>
+                  </div>
+                </div>
+                <h5>Course Modules</h5>
+                <div class="accordion" id="courseModules">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Module 1: Introduction to Professional Development
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#courseModules">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 1: Understanding
+                              Professional Growth</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 2: Setting Career
+                              Goals</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 3: Self-Assessment
+                              Tools</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Module 2: Communication Skills
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#courseModules">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 1: Effective Verbal
+                              Communication</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 2: Written
+                              Communication</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 3: Active
+                              Listening</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Module 3: Leadership Development
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#courseModules">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-check-circle-fill text-success me-2"></i> Lesson 1: Leadership
+                              Styles</span>
+                            <span class="badge bg-success rounded-pill">Completed</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-play-circle-fill text-primary me-2"></i> Lesson 2: Team
+                              Management</span>
+                            <span class="badge bg-primary rounded-pill">In Progress</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-circle me-2"></i> Lesson 3: Conflict Resolution</span>
+                            <span class="badge bg-secondary rounded-pill">Not Started</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Continue Learning</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- DataTables -->
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+  <script src="js/user-panel.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll in Course - LifeBalance LMS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enroll-styles.css">
+</head>
+
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">LifeBalance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-4 mt-3 mt-lg-0 d-flex">
+                    <a href="auth.html" class="btn btn-outline-gold me-2">
+                        <i class="bi bi-person"></i> Login
+                    </a>
+                    <a href="auth.html?register=true" class="btn btn-secondary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enrollment Progress -->
+    <div class="enrollment-progress-container">
+        <div class="container">
+            <div class="enrollment-progress">
+                <div class="progress-step active">
+                    <div class="step-icon"><i class="bi bi-1-circle-fill"></i></div>
+                    <div class="step-label">Course Selection</div>
+                </div>
+                <div class="progress-connector active"></div>
+                <div class="progress-step active">
+                    <div class="step-icon"><i class="bi bi-2-circle-fill"></i></div>
+                    <div class="step-label">Enrollment Details</div>
+                </div>
+                <div class="progress-connector"></div>
+                <div class="progress-step">
+                    <div class="step-icon"><i class="bi bi-3-circle-fill"></i></div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="progress-connector"></div>
+                <div class="progress-step">
+                    <div class="step-icon"><i class="bi bi-check-circle-fill"></i></div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enroll Section -->
+    <section class="enroll-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Enrollment Form Column -->
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="card enrollment-card border-0 shadow-sm">
+                        <div class="card-body p-4 p-lg-5">
+                            <h1 class="card-title h2 mb-4">Complete Your Enrollment</h1>
+                            <p class="text-muted mb-4">Please fill in your details to enroll in this course. All fields
+                                marked with * are required.</p>
+
+                            <form id="enrollmentForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                            <input type="text" class="form-control" id="firstName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                            <input type="text" class="form-control" id="lastName" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                                        <input type="text" class="form-control" id="address">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="zipCode" class="form-label">Zip Code</label>
+                                        <input type="text" class="form-control" id="zipCode">
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="specialRequirements" class="form-label">Special Requirements or
+                                        Comments</label>
+                                    <textarea class="form-control" id="specialRequirements" rows="3"></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label d-block">Payment Method *</label>
+                                    <div class="payment-methods">
+                                        <div class="payment-method-option">
+                                            <input type="radio" class="btn-check" name="paymentMethod" id="creditCard"
+                                                value="credit_card" autocomplete="off" checked>
+                                            <label class="btn payment-method-btn" for="creditCard">
+                                                <i class="bi bi-credit-card"></i>
+                                                <span>Credit Card</span>
+                                            </label>
+                                        </div>
+                                        <div class="payment-method-option">
+                                            <input type="radio" class="btn-check" name="paymentMethod" id="paypal"
+                                                value="paypal" autocomplete="off">
+                                            <label class="btn payment-method-btn" for="paypal">
+                                                <i class="bi bi-paypal"></i>
+                                                <span>PayPal</span>
+                                            </label>
+                                        </div>
+                                        <div class="payment-method-option">
+                                            <input type="radio" class="btn-check" name="paymentMethod" id="bankTransfer"
+                                                value="bank_transfer" autocomplete="off">
+                                            <label class="btn payment-method-btn" for="bankTransfer">
+                                                <i class="bi bi-bank"></i>
+                                                <span>Bank Transfer</span>
+                                            </label>
+                                        </div>
+                                        <div class="payment-method-option">
+                                            <input type="radio" class="btn-check" name="paymentMethod"
+                                                id="mobileBanking" value="mobile_banking" autocomplete="off">
+                                            <label class="btn payment-method-btn" for="mobileBanking">
+                                                <i class="bi bi-phone"></i>
+                                                <span>Mobile Banking</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="#" data-bs-toggle="modal"
+                                            data-bs-target="#termsModal">Terms of Service</a> and <a href="#"
+                                            data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <a href="courses.html" class="btn btn-outline-secondary mb-3 mb-md-0">
+                                        <i class="bi bi-arrow-left"></i> Back to Courses
+                                    </a>
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        Continue to Payment <i class="bi bi-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary Column -->
+                <div class="col-lg-4">
+                    <div class="order-summary-container">
+                        <div class="card order-summary-card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-transparent border-0 pt-4 px-4">
+                                <h3 class="h5 mb-0">Order Summary</h3>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="course-preview mb-4">
+                                    <img src="/placeholder.svg?height=150&width=300"
+                                        alt="Professional Development Course" class="img-fluid rounded mb-3">
+                                    <h4 class="h6 mb-2">Professional Development Course</h4>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="course-rating me-2">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-half text-warning"></i>
+                                        </div>
+                                        <span class="small text-muted">4.5 (128 reviews)</span>
+                                    </div>
+                                    <div class="course-details">
+                                        <div class="course-detail">
+                                            <i class="bi bi-calendar3"></i>
+                                            <span>Start Date: June 15, 2023</span>
+                                        </div>
+                                        <div class="course-detail">
+                                            <i class="bi bi-clock"></i>
+                                            <span>Duration: 8 weeks</span>
+                                        </div>
+                                        <div class="course-detail">
+                                            <i class="bi bi-person"></i>
+                                            <span>Instructor: Dr. Sarah Johnson</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="price-breakdown">
+                                    <div class="price-item d-flex justify-content-between mb-2">
+                                        <span>Course Price</span>
+                                        <span>4,000 TK</span>
+                                    </div>
+                                    <div class="price-item d-flex justify-content-between mb-2">
+                                        <span>Discount</span>
+                                        <span class="text-success">-500 TK</span>
+                                    </div>
+                                    <div class="price-item d-flex justify-content-between mb-2">
+                                        <span>Tax</span>
+                                        <span>0 TK</span>
+                                    </div>
+                                    <hr>
+                                    <div class="price-total d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold">Total</span>
+                                        <span class="total-price">3,500 TK</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card secure-payment-card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-3">Secure Payment</h5>
+                                <p class="text-muted small mb-3">Your payment information is processed securely. We do
+                                    not store credit card details nor have access to your credit card information.</p>
+                                <div class="payment-icons mb-3">
+                                    <img src="/placeholder.svg?height=30&width=40" alt="Visa" class="payment-icon">
+                                    <img src="/placeholder.svg?height=30&width=40" alt="Mastercard"
+                                        class="payment-icon">
+                                    <img src="/placeholder.svg?height=30&width=40" alt="American Express"
+                                        class="payment-icon">
+                                    <img src="/placeholder.svg?height=30&width=40" alt="PayPal" class="payment-icon">
+                                    <img src="/placeholder.svg?height=30&width=40" alt="bKash" class="payment-icon">
+                                    <img src="/placeholder.svg?height=30&width=40" alt="Nagad" class="payment-icon">
+                                </div>
+                                <div class="secure-badges d-flex align-items-center">
+                                    <div class="secure-badge me-3">
+                                        <i class="bi bi-shield-lock-fill"></i>
+                                        <span>SSL Secured</span>
+                                    </div>
+                                    <div class="secure-badge">
+                                        <i class="bi bi-patch-check-fill"></i>
+                                        <span>Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="need-help mt-4 text-center">
+                            <p class="mb-2">Need help with your enrollment?</p>
+                            <a href="contact.html" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-headset"></i> Contact Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Enroll Section -->
+    <section class="why-enroll-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Enroll With Us?</h2>
+                <p class="section-description">Join thousands of satisfied students who have advanced their careers with
+                    our courses</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h3 class="benefit-title">Expert Instructors</h3>
+                        <p class="benefit-text">Learn from industry professionals with years of real-world experience
+                            and expertise.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h3 class="benefit-title">Flexible Learning</h3>
+                        <p class="benefit-text">Access course materials anytime, anywhere, and learn at your own pace.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3 class="benefit-title">Career Advancement</h3>
+                        <p class="benefit-text">Gain skills that employers value and advance your career opportunities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-slider mt-5">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="testimonial-item text-center">
+                                        <div class="quote-icon mb-3">
+                                            <i class="bi bi-quote"></i>
+                                        </div>
+                                        <p class="testimonial-text">"The Professional Development Course completely
+                                            transformed my career path. The skills I learned were immediately applicable
+                                            to my job, and I received a promotion within 3 months of completing the
+                                            course."</p>
+                                        <div class="testimonial-author">
+                                            <img src="/placeholder.svg?height=60&width=60" alt="John Doe"
+                                                class="author-image">
+                                            <div class="author-info">
+                                                <h4 class="author-name">John Doe</h4>
+                                                <p class="author-title">Marketing Manager</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial-item text-center">
+                                        <div class="quote-icon mb-3">
+                                            <i class="bi bi-quote"></i>
+                                        </div>
+                                        <p class="testimonial-text">"The instructors were incredibly knowledgeable and
+                                            supportive throughout the course. The practical assignments helped me build
+                                            a portfolio that impressed my employers."</p>
+                                        <div class="testimonial-author">
+                                            <img src="/placeholder.svg?height=60&width=60" alt="Jane Smith"
+                                                class="author-image">
+                                            <div class="author-info">
+                                                <h4 class="author-name">Jane Smith</h4>
+                                                <p class="author-title">UX Designer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>These Terms of Service govern your use of our platform and services. By enrolling in our courses,
+                        you agree to these terms.</p>
+                    <h6>1. Course Enrollment</h6>
+                    <p>When you enroll in a course, you agree to pay the specified fees and comply with all course
+                        requirements.</p>
+                    <h6>2. Payment Terms</h6>
+                    <p>All payments are processed securely. Refunds are available within 7 days of enrollment if you
+                        haven't accessed more than 20% of the course content.</p>
+                    <h6>3. Course Access</h6>
+                    <p>Upon successful payment, you will receive access to the course materials for the specified
+                        duration.</p>
+                    <h6>4. Intellectual Property</h6>
+                    <p>All course materials are protected by copyright and may not be reproduced, distributed, or shared
+                        without permission.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This Privacy Policy explains how we collect, use, and protect your personal information.</p>
+                    <h6>1. Information Collection</h6>
+                    <p>We collect information you provide during enrollment, including your name, email, and payment
+                        details.</p>
+                    <h6>2. Use of Information</h6>
+                    <p>We use your information to process enrollments, provide course access, and communicate important
+                        updates.</p>
+                    <h6>3. Data Security</h6>
+                    <p>We implement security measures to protect your personal information from unauthorized access or
+                        disclosure.</p>
+                    <h6>4. Third-Party Services</h6>
+                    <p>We may use third-party services for payment processing, but we do not sell or share your
+                        information with unaffiliated third parties.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4>LifeBalance</h4>
+                    <p class="text-muted">Empowering individuals through quality education and professional development.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4>Resources</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                        <li><a href="#">Student Success</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4>Contact Us</h4>
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-geo-alt me-2 mt-1"></i>
+                            <span>123 Education Street, Dhaka, Bangladesh</span>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-telephone me-2 mt-1"></i>
+                            <span>+880 1234 567890</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-envelope me-2 mt-1"></i>
+                            <span>info@lifebalance.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center py-4 mt-4">
+                <p class="mb-0">© 2023 LifeBalance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+    <script src="js/enroll.js"></script>
+</body>
+
+</html>

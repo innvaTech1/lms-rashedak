@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeBalance LMS - Courses</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">LifeBalance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-4 mt-3 mt-lg-0 d-flex">
+                    <a href="auth.html" class="btn btn-outline-gold me-2">
+                        <i class="bi bi-person"></i> Login
+                    </a>
+                    <a href="auth.html?register=true" class="btn btn-secondary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-5 text-center text-white" style="background-color: var(--deep-blue);">
+        <div class="container py-4">
+            <h1 class="mb-3">Explore Our Courses</h1>
+            <p class="lead mx-auto" style="max-width: 700px;">Discover a wide range of courses designed to help you achieve balance in your personal and professional life.</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-5">
+        <div class="container py-4">
+            <!-- Search and Filter Section -->
+            <div class="filter-container mb-4">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-end-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" id="searchInput" class="form-control border-start-0" placeholder="Search courses...">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="categoryFilter" class="form-select">
+                            <option value="all">All Categories</option>
+                            <option value="Wellness">Wellness</option>
+                            <option value="Career Growth">Career Growth</option>
+                            <option value="Personal Growth">Personal Growth</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="sortFilter" class="form-select">
+                            <option value="newest">Newest</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="mb-0 text-muted">
+                    Showing <span id="courseCount" class="fw-medium text-dark">8</span> courses
+                </p>
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-funnel text-teal-green me-2"></i>
+                    <span class="small">Filters Applied: <span id="activeFilter">None</span></span>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="row g-4" id="courseContainer">
+                <!-- Course 1 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="1" data-price="49.99" data-rating="4.8" data-category="Wellness">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Wellness</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.8
+                                </div>
+                            </div>
+                            <h5 class="card-title">Mindfulness for Everyday Life</h5>
+                            <p class="card-text text-muted small">By Rasheda Khanom</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$49.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="2" data-price="59.99" data-rating="4.7" data-category="Career Growth">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Career Growth</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.7
+                                </div>
+                            </div>
+                            <h5 class="card-title">Career Growth Masterclass</h5>
+                            <p class="card-text text-muted small">By John Smith</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$59.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="3" data-price="39.99" data-rating="4.9" data-category="Wellness">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Wellness</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.9
+                                </div>
+                            </div>
+                            <h5 class="card-title">Balanced Nutrition Essentials</h5>
+                            <p class="card-text text-muted small">By Sarah Johnson</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$39.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 4 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="4" data-price="44.99" data-rating="4.6" data-category="Personal Growth">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Personal Growth</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.6
+                                </div>
+                            </div>
+                            <h5 class="card-title">Effective Time Management</h5>
+                            <p class="card-text text-muted small">By Michael Brown</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$44.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 5 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="5" data-price="54.99" data-rating="4.9" data-category="Wellness">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Wellness</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.9
+                                </div>
+                            </div>
+                            <h5 class="card-title">Stress Reduction Techniques</h5>
+                            <p class="card-text text-muted small">By Rasheda Khanom</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$54.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 6 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="6" data-price="64.99" data-rating="4.8" data-category="Career Growth">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Career Growth</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.8
+                                </div>
+                            </div>
+                            <h5 class="card-title">Leadership Skills Development</h5>
+                            <p class="card-text text-muted small">By Robert Williams</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$64.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 7 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="7" data-price="34.99" data-rating="4.7" data-category="Wellness">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Wellness</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.7
+                                </div>
+                            </div>
+                            <h5 class="card-title">Meditation for Beginners</h5>
+                            <p class="card-text text-muted small">By Emily Chen</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$34.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 8 -->
+                <div class="col-md-6 col-lg-3 fade-in course-card" data-id="8" data-price="49.99" data-rating="4.5" data-category="Personal Growth">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/400x300" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge rounded-pill">Personal Growth</span>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i> 4.5
+                                </div>
+                            </div>
+                            <h5 class="card-title">Financial Wellness 101</h5>
+                            <p class="card-text text-muted small">By David Miller</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <span class="price">$49.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="noResults" class="text-center py-5" style="display: none;">
+                <h3 class="mb-3">No courses found</h3>
+                <p class="text-muted mb-4">Try adjusting your search or filter criteria</p>
+                <button id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Brand Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h4>LifeBalance</h4>
+                    <p class="text-muted mb-4">Empowering individuals to achieve lifestyle balance, wellness, and personal growth.</p>
+                    <div class="mb-4">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="courses.html">All Courses</a></li>
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                        <li class="mb-2"><a href="auth.html">Login / Register</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h4>Contact Us</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="bi bi-envelope text-gold me-2"></i>
+                            <a href="mailto:info@lifebalance.com">info@lifebalance.com</a>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="bi bi-telephone text-gold me-2"></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="bi bi-geo-alt text-gold me-2 mt-1"></i>
+                            <span>123 Wellness Street, Balance City, BC 12345</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-3 col-md-6">
+                    <h4>Subscribe to Newsletter</h4>
+                    <p class="text-muted mb-3">Stay updated with our latest courses and wellness tips.</p>
+                    <div class="mb-3">
+                        <input type="email" class="form-control bg-white text-dark mb-2" placeholder="Your email address">
+                        <button class="btn btn-accent w-100">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center text-muted">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> LifeBalance LMS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+

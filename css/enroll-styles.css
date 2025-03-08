@@ -1,0 +1,472 @@
+/* Enrollment Page Styles */
+
+/* Progress Indicator */
+.enrollment-progress-container {
+  background-color: var(--soft-white);
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.enrollment-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--soft-gray);
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active .step-icon {
+  background-color: var(--teal-green);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px rgba(42, 157, 143, 0.2);
+}
+
+.step-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active .step-label {
+  color: var(--teal-green);
+  font-weight: 600;
+}
+
+.progress-connector {
+  flex-grow: 1;
+  height: 3px;
+  background-color: var(--soft-gray);
+  margin: 0 10px;
+  position: relative;
+  top: -20px;
+  z-index: 0;
+}
+
+.progress-connector.active {
+  background-color: var(--teal-green);
+}
+
+/* Enrollment Section */
+.enroll-section {
+  background-color: var(--soft-white);
+  position: relative;
+}
+
+.enroll-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a9d8f' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.enrollment-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.enrollment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.enrollment-card .card-title {
+  color: var(--deep-blue);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.enrollment-card .card-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--teal-green);
+  border-radius: 3px;
+}
+
+.input-group-text {
+  background-color: var(--soft-teal);
+  border-color: var(--soft-gray);
+  color: var(--teal-green);
+}
+
+.form-control:focus {
+  border-color: var(--teal-green);
+  box-shadow: 0 0 0 0.25rem rgba(42, 157, 143, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--deep-blue);
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.payment-method-option {
+  flex: 1;
+  min-width: 120px;
+}
+
+.payment-method-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid var(--soft-gray);
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.payment-method-btn i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--deep-blue);
+}
+
+.payment-method-btn span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.btn-check:checked+.payment-method-btn {
+  background-color: var(--soft-teal);
+  border-color: var(--teal-green);
+  color: var(--teal-green);
+}
+
+.btn-check:checked+.payment-method-btn i {
+  color: var(--teal-green);
+}
+
+/* Order Summary */
+.order-summary-container {
+  position: sticky;
+  top: 100px;
+}
+
+.order-summary-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.order-summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.order-summary-card .card-header {
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+.course-preview {
+  border-bottom: 1px solid var(--soft-gray);
+  padding-bottom: 1rem;
+}
+
+.course-rating i {
+  font-size: 0.8rem;
+}
+
+.course-details {
+  margin-top: 1rem;
+}
+
+.course-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.course-detail i {
+  margin-right: 0.5rem;
+  color: var(--teal-green);
+}
+
+.price-breakdown {
+  padding-top: 1rem;
+}
+
+.price-item {
+  font-size: 0.9rem;
+}
+
+.price-total {
+  font-size: 1.1rem;
+}
+
+.total-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--teal-green);
+}
+
+/* Secure Payment Card */
+.secure-payment-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.secure-payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.payment-icon {
+  height: 30px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.payment-icon:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.secure-badges {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--deep-blue);
+}
+
+.secure-badge i {
+  color: var(--teal-green);
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Why Enroll Section */
+.why-enroll-section {
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid var(--soft-gray);
+  text-align: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--teal-green);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--soft-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: var(--teal-green);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  background-color: var(--teal-green);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+}
+
+.benefit-text {
+  color: #6c757d;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+  padding: 2rem 0;
+}
+
+.testimonial-item {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 3px solid var(--soft-gray);
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--deep-blue);
+  margin-bottom: 0.25rem;
+}
+
+.author-title {
+  color: var(--teal-green);
+  font-size: 0.875rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background-color: var(--teal-green);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+.carousel-control-prev {
+  left: -50px;
+}
+
+.carousel-control-next {
+  right: -50px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .enrollment-progress {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+  }
+
+  .order-summary-container {
+    position: static;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .enrollment-progress {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: flex-start;
+  }
+
+  .progress-step {
+    min-width: 100px;
+  }
+
+  .payment-method-option {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .step-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .step-label {
+    font-size: 0.65rem;
+  }
+}
